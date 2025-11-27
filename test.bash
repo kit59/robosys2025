@@ -3,22 +3,26 @@
 # SPDX-License-Identifier: BSD-3-Claunse
 
 ng () {
-	echo NG at Line $1
-	res=1
+        echo NG at Line $1
+        res=1
 }
 
 res=0
 
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng ${LINENO}
+out=$(echo "あいうえお" | ./count)
+[ "${out}" = "1" ] || ng ${LINENO}
 
-out=$(echo あ | ./plus)
-[ "$?" = 1 ]      || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
+out=$(echo "アイウエオ" | ./count)
+[ "${out}" = "1" ] || ng ${LINENO}
 
-out=$(echo | ./plus)
-[ "$?" = 1 ]      || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
+out=$(echo "ぁァあア" | ./count)
+[ "${out}" = "4" ] || ng ${LINENO}
+
+out=$(echo "かきくけこ" | ./count)
+[ "${out}" = "0" ] || ng ${LINENO}
+
+out=$(echo "今日はアメがふってぁしたもあついです" | ./count)
+[ "${out}" = "3" ] || ng ${LINENO}
 
 [ "$res" = 0 ] && echo OK
 exit $res

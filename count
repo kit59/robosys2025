@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+#SPDX-FileCopyrightText: 2025 Kaito Akiyama
+#SPDX-License-Identifier: BSD-3-Clause
+
+s = input()
+
+targets = ["あ", "ア", "ぁ", "ァ"]
+
+count = sum(s.count(c) for c in targets)
+
+print(count)
