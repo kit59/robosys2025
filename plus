@@ -4,25 +4,16 @@
 
 import sys
 
+def tonum(s):
+    try:
+        return int(s)
+    except:
+        return float(s)
+
+
 ans = 0
-invalid = False
-has_input = False
-
 for line in sys.stdin:
-    line = line.strip()
-    if line == "":
-        invalid = True
-        continue
-    has_input = True
-    if line.isdigit() or (line[0] == "-" and line[1:].isdigit()):
-        ans += int(line)
-    else:
-        invalid = True
-
-if not has_input or invalid:
-    sys.exit(1)
+    line = line.rstrip()
+    ans += tonum(line)
 
 print(ans)
-sys.exit(0)
-
-
