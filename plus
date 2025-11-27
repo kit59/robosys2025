@@ -4,8 +4,25 @@
 
 import sys
 
-ans = 0.0
+ans = 0
+invalid = False
+has_input = False
+
 for line in sys.stdin:
-    ans += float(line)
+    line = line.strip()
+    if line == "":
+        invalid = True
+        continue
+    has_input = True
+    if line.isdigit() or (line[0] == "-" and line[1:].isdigit()):
+        ans += int(line)
+    else:
+        invalid = True
+
+if not has_input or invalid:
+    sys.exit(1)
 
 print(ans)
+sys.exit(0)
+
+
