@@ -16,10 +16,10 @@ $ echo "今日はアメがふってぁしたもあついです" | ./count
 3
 ```
 
-## How to copy
+## インストール方法
 以下のコマンドでローカルのディレクトリ内にコピーできる。
 ```
-git clone git@github.com:kit59/robosys2025.git
+$ git clone git@github.com:kit59/robosys2025.git
 ```
 
 ## 必要なソフトウェア
