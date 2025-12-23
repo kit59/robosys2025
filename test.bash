@@ -24,5 +24,9 @@ out=$(echo "かきくけこ" | ./count)
 out=$(echo "今日はアメがふってぁしたもあついです" | ./count)
 [ "${out}" = "3" ] || ng ${LINENO}
 
+out=$(./count < /dev/null 2>/dev/null)
+[ "$?" != 0 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 [ "$res" = 0 ] && echo OK
 exit $res
