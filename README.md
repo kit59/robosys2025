@@ -16,7 +16,7 @@ $ echo "今日はアメがふってぁしたもあついです" | ./count
 3
 ```
 
-## Copy
+## How to copy
 以下のコマンドでローカルのディレクトリ内にコピーできる。
 ```
 git clone git@github.com:kit59/robosys2025.git
@@ -27,7 +27,7 @@ git clone git@github.com:kit59/robosys2025.git
   * テスト済み: 3.7～3.10
 
 ## テスト環境
-* Ubuntu 20.04 on Windows
+* Ubuntu 20.04.6 LTS
 
 ## License
 * このソフトウェアパッケージは, 3条項BSDライセンスの下, 再頒布および使用が許可されます
